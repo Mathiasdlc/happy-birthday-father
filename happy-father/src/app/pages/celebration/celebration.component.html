@@ -1,0 +1,168 @@
+<div class="celebration-container">
+  
+  <!-- Header de navegación -->
+  <header class="page-header">
+    <div class="header-content">
+      <h1 class="page-title">🥂 Celebración Final</h1>
+      <p class="page-subtitle">Un brindis por ti, por nosotros, por la vida</p>
+      
+      <!-- Navegación entre páginas -->
+      <nav class="page-nav">
+        <button class="nav-btn" (click)="navigateTo('/home')">🏠 Inicio</button>
+        <button class="nav-btn" (click)="navigateTo('/qualities')">⭐ Cualidades</button>
+        <button class="nav-btn" (click)="navigateTo('/gallery')">📸 Galería</button>
+        <button class="nav-btn" (click)="navigateTo('/memories')">💭 Recuerdos</button>
+        <button class="nav-btn" (click)="navigateTo('/message')">💌 Mensaje</button>
+        <button class="nav-btn active">🥂 Celebración</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="celebration-main">
+    
+    <!-- Sección principal de celebración -->
+    <section class="main-celebration">
+      <div class="celebration-content">
+        
+        <!-- Título principal -->
+        <div class="celebration-title-section">
+          <h1 class="main-title">¡Feliz Cumpleaños, Papá!</h1>
+          <div class="age-celebration">
+            <span class="age-number">{{ dadAge }}</span>
+            <span class="age-text">años de sabiduría y amor</span>
+          </div>
+        </div>
+
+        <!-- Elementos decorativos centrales -->
+        <div class="celebration-centerpiece">
+          <div class="toast-glasses">
+            <div class="glass glass-1">🥂</div>
+            <div class="glass glass-2">🥂</div>
+          </div>
+          <div class="celebration-message">
+            <p class="toast-text">Por todos los años vividos y por todos los que están por venir</p>
+          </div>
+        </div>
+
+        <!-- Estadísticas especiales -->
+        <div class="life-stats">
+          <div class="stat-card">
+            <div class="stat-icon">👨‍👦</div>
+            <div class="stat-number">{{ currentAge }}</div>
+            <div class="stat-label">Años siendo tu hijo</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">❤️</div>
+            <div class="stat-number">∞</div>
+            <div class="stat-label">Amor incondicional</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">🌟</div>
+            <div class="stat-number">1</div>
+            <div class="stat-label">Papá único en el mundo</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Sección de deseos -->
+    <section class="wishes-section">
+      <div class="wishes-container">
+        <h2 class="wishes-title">🌟 Mis Deseos Para Ti</h2>
+        <div class="wishes-grid">
+          
+          <div class="wish-card">
+            <div class="wish-icon">🏥</div>
+            <h3 class="wish-title">Salud Plena</h3>
+            <p class="wish-text">Que tengas muchos años más de vida saludable para disfrutar de todo lo que has construido</p>
+          </div>
+          
+          <div class="wish-card">
+            <div class="wish-icon">😊</div>
+            <h3 class="wish-title">Felicidad Constante</h3>
+            <p class="wish-text">Que cada día te traiga motivos para sonreír y que encuentres alegría en las pequeñas cosas</p>
+          </div>
+          
+          <div class="wish-card">
+            <div class="wish-icon">🎯</div>
+            <h3 class="wish-title">Sueños Cumplidos</h3>
+            <p class="wish-text">Que puedas realizar todos esos proyectos y sueños que aún tienes pendientes</p>
+          </div>
+          
+          <div class="wish-card">
+            <div class="wish-icon">👨‍👩‍👧‍👦</div>
+            <h3 class="wish-title">Familia Unida</h3>
+            <p class="wish-text">Que siempre tengamos tiempo de calidad juntos y que nuestra familia siga creciendo en amor</p>
+          </div>
+          
+          <div class="wish-card">
+            <div class="wish-icon">🏆</div>
+            <h3 class="wish-title">Reconocimiento</h3>
+            <p class="wish-text">Que recibas todo el reconocimiento que mereces por ser el hombre excepcional que eres</p>
+          </div>
+          
+          <div class="wish-card">
+            <div class="wish-icon">🌅</div>
+            <h3 class="wish-title">Nuevas Aventuras</h3>
+            <p class="wish-text">Que cada nuevo año te traiga experiencias maravillosas y aventuras por descubrir</p>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- Mensaje final -->
+    <section class="final-message-section">
+      <div class="final-message-card">
+        <h2 class="final-title">💙 Gracias Por Ser Mi Papá</h2>
+        <div class="final-content">
+          <p class="final-text">
+            En este día especial, quiero que sepas que no hay regalo más grande que tenerte como padre. 
+            A mis {{ currentAge }} años, cada día aprendo algo nuevo de ti, cada día te admiro más, 
+            y cada día me siento más orgulloso de ser tu hijo.
+          </p>
+          <p class="final-text">
+            Que este nuevo año de vida esté lleno de bendiciones, alegría y todo lo que tu corazón desea. 
+            Te amo más de lo que las palabras pueden expresar.
+          </p>
+          <div class="final-signature">
+            <div class="signature-line">Con todo mi amor y admiración,</div>
+            <div class="signature-name">Tu hijo que siempre te amará</div>
+            <div class="signature-date">{{ getCurrentDate() }}</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Efectos de celebración -->
+    <div class="celebration-effects">
+      <div class="confetti confetti-1">🎊</div>
+      <div class="confetti confetti-2">🎉</div>
+      <div class="confetti confetti-3">🎊</div>
+      <div class="confetti confetti-4">🎉</div>
+      <div class="balloons">
+        <div class="balloon balloon-1">🎈</div>
+        <div class="balloon balloon-2">🎈</div>
+        <div class="balloon balloon-3">🎈</div>
+      </div>
+    </div>
+
+    <!-- Navegación final -->
+    <section class="final-navigation">
+      <div class="nav-buttons">
+        <button class="nav-final-btn" (click)="navigateTo('/home')">
+          <span class="btn-icon">🏠</span>
+          <span class="btn-text">Volver al Inicio</span>
+        </button>
+        <button class="nav-final-btn logout-btn" (click)="onLogout()">
+          <span class="btn-icon">👋</span>
+          <span class="btn-text">Cerrar Sesión</span>
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+</div>

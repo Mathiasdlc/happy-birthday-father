@@ -1,0 +1,109 @@
+<div class="gallery-container">
+  
+  <!-- Header de navegación -->
+  <header class="page-header">
+    <div class="header-content">
+      <h1 class="page-title">📸 Galería de Recuerdos</h1>
+      <p class="page-subtitle">Los momentos que más atesoro contigo</p>
+      
+      <!-- Navegación entre páginas -->
+      <nav class="page-nav">
+        <button class="nav-btn" (click)="navigateTo('/home')">🏠 Inicio</button>
+        <button class="nav-btn" (click)="navigateTo('/qualities')">⭐ Cualidades</button>
+        <button class="nav-btn active">📸 Galería</button>
+        <button class="nav-btn" (click)="navigateTo('/memories')">💭 Recuerdos</button>
+        <button class="nav-btn" (click)="navigateTo('/message')">💌 Mensaje</button>
+        <button class="nav-btn" (click)="navigateTo('/celebration')">🥂 Celebración</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="gallery-main">
+    
+    <!-- Filtros de categoría -->
+    <section class="category-filters">
+      <h2 class="filters-title">Categorías</h2>
+      <div class="filter-buttons">
+        <button 
+          class="filter-btn"
+          [class.active]="selectedCategory === 'todas'"
+          (click)="selectCategory('todas')"
+        >
+          🌟 Todas
+        </button>
+        <button 
+          class="filter-btn"
+          [class.active]="selectedCategory === 'familia'"
+          (click)="selectCategory('familia')"
+        >
+          👨‍👩‍👧‍👦 Familia
+        </button>
+        <button 
+          class="filter-btn"
+          [class.active]="selectedCategory === 'momentos'"
+          (click)="selectCategory('momentos')"
+        >
+          ⏰ Momentos
+        </button>
+        <button 
+          class="filter-btn"
+          [class.active]="selectedCategory === 'logros'"
+          (click)="selectCategory('logros')"
+        >
+          🏆 Logros
+        </button>
+        <button 
+          class="filter-btn"
+          [class.active]="selectedCategory === 'viajes'"
+          (click)="selectCategory('viajes')"
+        >
+          ✈️ Viajes
+        </button>
+      </div>
+    </section>
+
+    <!-- Grid de imágenes -->
+    <section class="images-grid">
+      <div 
+        *ngFor="let image of filteredImages; trackBy: trackByImageId"
+        class="image-card"
+      >
+        <div class="image-container">
+          <img 
+            [src]="image.imagePath" 
+            [alt]="image.title"
+            (error)="onImageError($event)"
+            class="gallery-image"
+          >
+          <div class="image-overlay">
+            <h3 class="image-title">{{ image.title }}</h3>
+            <p class="image-description">{{ image.description }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mensaje cuando no hay imágenes -->
+    <div *ngIf="filteredImages.length === 0" class="no-images">
+      <div class="no-images-icon">📷</div>
+      <h3 class="no-images-title">No hay imágenes en esta categoría</h3>
+      <p class="no-images-text">Selecciona otra categoría para ver más recuerdos</p>
+    </div>
+
+    <!-- Instrucciones para agregar imágenes -->
+    <section class="instructions">
+      <div class="instructions-card">
+        <h3 class="instructions-title">💡 Cómo agregar tus propias imágenes</h3>
+        <ol class="instructions-list">
+          <li>Coloca tus fotos en la carpeta <code>src/assets/images/</code></li>
+          <li>Actualiza las rutas en <code>gallery.component.ts</code></li>
+          <li>Cambia los títulos y descripciones por los tuyos</li>
+          <li>¡Disfruta de tus recuerdos personalizados!</li>
+        </ol>
+      </div>
+    </section>
+
+  </main>
+
+</div>

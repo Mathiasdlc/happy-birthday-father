@@ -1,0 +1,28 @@
+# Carpeta para archivos de audio
+
+## 🎵 INSTRUCCIONES PARA "A THOUSAND YEARS"
+
+### Paso 1: Descargar la canción
+1. Ve a: https://savefrom.net/
+2. Pega este enlace: https://www.youtube.com/watch?v=69VStYa0aBA
+3. Selecciona MP3 y descarga
+
+### Paso 2: Preparar el archivo
+1. Renombra el archivo descargado a: background-music.mp3
+2. Colócalo exactamente aquí: src/assets/audio/background-music.mp3
+
+### Paso 3: ¡Listo!
+La aplicación detectará automáticamente tu archivo y "A Thousand Years" 
+sonará de fondo mientras tu papá navega por las páginas.
+
+## Alternativas si no funciona SaveFrom:
+- MP3Convert.io
+- OnlineVideoConverter.pro  
+- 9Convert.com
+- Desde tu teléfono con apps como Snaptube
+
+## Nota importante:
+- El archivo DEBE llamarse exactamente: background-music.mp3
+- DEBE estar en esta carpeta: src/assets/audio/
+- Formatos soportados: MP3, WAV, OGG
+- Tamaño recomendado: Máximo 10 MB

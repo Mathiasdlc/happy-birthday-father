@@ -1,0 +1,512 @@
+/* Contenedor principal */
+.celebration-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+  color: #fff;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Header de la página */
+.page-header {
+  background: rgba(15, 32, 39, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 30px 0;
+  text-align: center;
+}
+
+.header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.page-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.page-subtitle {
+  font-size: 1.2rem;
+  color: #b8c6db;
+  margin: 0 0 30px 0;
+  font-style: italic;
+}
+
+/* Navegación entre páginas */
+.page-nav {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.nav-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.nav-btn.active {
+  background: linear-gradient(135deg, #d4af37, #ffd700);
+  color: #1e3c72;
+  font-weight: 600;
+}
+
+/* Contenido principal */
+.celebration-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Celebración principal */
+.main-celebration {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.celebration-content {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 20px;
+  padding: 50px 30px;
+  backdrop-filter: blur(10px);
+}
+
+.celebration-title-section {
+  margin-bottom: 40px;
+}
+
+.main-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 20px 0;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  animation: titleGlow 3s ease-in-out infinite;
+  font-family: 'Georgia', serif;
+}
+
+.age-celebration {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.age-number {
+  font-size: 4rem;
+  font-weight: 900;
+  color: #d4af37;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  animation: numberPulse 2s ease-in-out infinite;
+}
+
+.age-text {
+  font-size: 1.2rem;
+  color: #b8c6db;
+  font-style: italic;
+}
+
+/* Elemento central */
+.celebration-centerpiece {
+  margin: 50px 0;
+}
+
+.toast-glasses {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.glass {
+  font-size: 4rem;
+  animation: toastAnimation 3s ease-in-out infinite;
+}
+
+.glass-1 {
+  animation-delay: 0s;
+}
+
+.glass-2 {
+  animation-delay: 0.5s;
+}
+
+.toast-text {
+  font-size: 1.3rem;
+  color: #e8e8e8;
+  font-style: italic;
+  margin: 0;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Estadísticas de vida */
+.life-stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 50px;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  min-width: 150px;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.stat-icon {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #d4af37;
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #b8c6db;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Sección de deseos */
+.wishes-section {
+  margin-bottom: 60px;
+}
+
+.wishes-container {
+  text-align: center;
+}
+
+.wishes-title {
+  font-size: 2.2rem;
+  color: #d4af37;
+  margin: 0 0 40px 0;
+  font-weight: 600;
+}
+
+.wishes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.wish-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  transition: all 0.4s ease;
+  animation: slideInUp 0.8s ease-out;
+}
+
+.wish-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(212, 175, 55, 0.5);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.wish-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.wish-title {
+  font-size: 1.2rem;
+  color: #fff;
+  margin: 0 0 10px 0;
+  font-weight: 600;
+}
+
+.wish-text {
+  font-size: 0.95rem;
+  color: #b8c6db;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Mensaje final */
+.final-message-section {
+  margin-bottom: 50px;
+}
+
+.final-message-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 40px;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.final-title {
+  font-size: 2rem;
+  color: #d4af37;
+  margin: 0 0 30px 0;
+  font-weight: 600;
+}
+
+.final-text {
+  font-size: 1.1rem;
+  color: #e8e8e8;
+  line-height: 1.7;
+  margin: 0 0 20px 0;
+  text-align: justify;
+}
+
+.final-signature {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.signature-line {
+  font-size: 1rem;
+  color: #b8c6db;
+  font-style: italic;
+  margin-bottom: 5px;
+}
+
+.signature-name {
+  font-size: 1.2rem;
+  color: #d4af37;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.signature-date {
+  font-size: 0.9rem;
+  color: #999;
+}
+
+/* Efectos de celebración */
+.celebration-effects {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.confetti {
+  position: absolute;
+  font-size: 2rem;
+  animation: confettiFall 4s linear infinite;
+}
+
+.confetti-1 { top: -50px; left: 20%; animation-delay: 0s; }
+.confetti-2 { top: -50px; left: 40%; animation-delay: 1s; }
+.confetti-3 { top: -50px; left: 60%; animation-delay: 2s; }
+.confetti-4 { top: -50px; left: 80%; animation-delay: 3s; }
+
+.balloons {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.balloon {
+  position: absolute;
+  font-size: 2rem;
+  animation: balloonFloat 6s ease-in-out infinite;
+}
+
+.balloon-1 { left: 10%; animation-delay: 0s; }
+.balloon-2 { left: 50%; animation-delay: 2s; }
+.balloon-3 { right: 10%; animation-delay: 4s; }
+
+/* Navegación final */
+.final-navigation {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.nav-final-btn {
+  background: linear-gradient(135deg, #2a5298, #1e3c72);
+  border: none;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.nav-final-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(42, 82, 152, 0.4);
+}
+
+.logout-btn {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
+
+.logout-btn:hover {
+  box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+}
+
+/* Animaciones */
+@keyframes titleGlow {
+  0%, 100% { text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); }
+  50% { text-shadow: 0 4px 20px rgba(212, 175, 55, 0.4); }
+}
+
+@keyframes numberPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes toastAnimation {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(5deg); }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes confettiFall {
+  0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+@keyframes balloonFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-30px); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .celebration-main {
+    padding: 30px 15px;
+  }
+  
+  .celebration-content {
+    padding: 30px 20px;
+  }
+  
+  .main-title {
+    font-size: 2.5rem;
+  }
+  
+  .age-number {
+    font-size: 3rem;
+  }
+  
+  .toast-glasses {
+    gap: 20px;
+  }
+  
+  .glass {
+    font-size: 3rem;
+  }
+  
+  .life-stats {
+    gap: 20px;
+  }
+  
+  .stat-card {
+    min-width: 120px;
+    padding: 20px;
+  }
+  
+  .wishes-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .final-message-card {
+    padding: 30px 20px;
+  }
+  
+  .nav-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-title {
+    font-size: 2rem;
+  }
+  
+  .main-title {
+    font-size: 2rem;
+  }
+  
+  .age-number {
+    font-size: 2.5rem;
+  }
+  
+  .glass {
+    font-size: 2.5rem;
+  }
+  
+  .toast-text {
+    font-size: 1.1rem;
+  }
+  
+  .wishes-title {
+    font-size: 1.8rem;
+  }
+  
+  .final-title {
+    font-size: 1.6rem;
+  }
+}

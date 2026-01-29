@@ -1,0 +1,131 @@
+<div class="home-container" [class.show]="showContent">
+  
+  <!-- Header con navegación -->
+  <header class="home-header">
+    <div class="header-content">
+      <div class="welcome-text">
+        <span class="welcome-greeting">¡Bienvenido, {{ currentUser?.username }}! 👋</span>
+        <span class="current-date">{{ getCurrentDate() }}</span>
+      </div>
+      
+      <!-- Navegación principal -->
+      <nav class="main-nav">
+        <button class="nav-btn active">🏠 Inicio</button>
+        <button class="nav-btn" (click)="navigateTo('/qualities')">⭐ Cualidades</button>
+        <button class="nav-btn" (click)="navigateTo('/gallery')">📸 Galería</button>
+        <button class="nav-btn" (click)="navigateTo('/memories')">💭 Recuerdos</button>
+        <button class="nav-btn" (click)="navigateTo('/message')">💌 Mensaje</button>
+        <button class="nav-btn" (click)="navigateTo('/celebration')">🥂 Celebración</button>
+      </nav>
+
+      <button class="logout-button" (click)="onLogout()" title="Cerrar sesión">
+        👋 Salir
+      </button>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="main-content">
+    
+    <!-- Sección Hero - Bienvenida -->
+    <section class="hero-section">
+      <div class="hero-content">
+        
+        <!-- Título principal -->
+        <div class="birthday-animation">
+          <h1 class="birthday-title">
+            Feliz Cumpleaños, Papá
+          </h1>
+          <div class="celebration-elements">
+            <span class="element elegant-1">✨</span>
+            <span class="element elegant-2">🥂</span>
+            <span class="element elegant-3">🎖️</span>
+            <span class="element elegant-4">⭐</span>
+            <span class="element elegant-5">🌟</span>
+          </div>
+        </div>
+        
+        <!-- Frase rotativa -->
+        <div class="quote-container">
+          <p class="rotating-quote">{{ getCurrentQuote() }}</p>
+        </div>
+
+        <!-- Mensaje personal de bienvenida -->
+        <div class="welcome-message">
+          <h2 class="welcome-title">Una Sorpresa Especial Para Ti</h2>
+          <p class="welcome-text">
+            A mis {{ currentAge }} años, he creado esta página especial para celebrar tu cumpleaños. 
+            Cada sección está llena de amor, recuerdos y todo lo que significa tenerte como padre. 
+            Navega por las diferentes páginas para descubrir mi regalo digital para ti.
+          </p>
+        </div>
+
+        <!-- Botones de navegación principales -->
+        <div class="navigation-grid">
+          
+          <button class="nav-card" (click)="navigateTo('/qualities')">
+            <div class="card-icon">⭐</div>
+            <div class="card-content">
+              <h3 class="card-title">Tus Cualidades</h3>
+              <p class="card-description">Lo que más admiro de ti</p>
+            </div>
+          </button>
+          
+          <button class="nav-card" (click)="navigateTo('/gallery')">
+            <div class="card-icon">📸</div>
+            <div class="card-content">
+              <h3 class="card-title">Galería</h3>
+              <p class="card-description">Nuestros recuerdos en imágenes</p>
+            </div>
+          </button>
+          
+          <button class="nav-card" (click)="navigateTo('/memories')">
+            <div class="card-icon">💭</div>
+            <div class="card-content">
+              <h3 class="card-title">Recuerdos</h3>
+              <p class="card-description">Momentos especiales juntos</p>
+            </div>
+          </button>
+          
+          <button class="nav-card" (click)="navigateTo('/message')">
+            <div class="card-icon">�</div>
+            <div class="card-content">
+              <h3 class="card-title">Mensaje</h3>
+              <p class="card-description">Carta del corazón</p>
+            </div>
+          </button>
+          
+          <button class="nav-card" (click)="navigateTo('/celebration')">
+            <div class="card-icon">🥂</div>
+            <div class="card-content">
+              <h3 class="card-title">Celebración</h3>
+              <p class="card-description">Brindis final</p>
+            </div>
+          </button>
+          
+        </div>
+
+        <!-- Mensaje de instrucciones -->
+        <div class="instructions">
+          <p class="instructions-text">
+            💡 <strong>Tip:</strong> Puedes navegar entre las páginas usando los botones del menú superior 
+            o haciendo clic en las tarjetas de arriba. ¡Disfruta tu regalo especial!
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Elementos flotantes de fondo más elegantes -->
+  <div class="background-elements">
+    <div class="floating-element element-1">✨</div>
+    <div class="floating-element element-2">⭐</div>
+    <div class="floating-element element-3">🌟</div>
+    <div class="floating-element element-4">💫</div>
+    <div class="floating-element element-5">🥂</div>
+    <div class="floating-element element-6">🎖️</div>
+  </div>
+
+</div>

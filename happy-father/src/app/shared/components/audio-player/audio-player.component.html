@@ -1,0 +1,84 @@
+<div class="audio-player" [class.loading]="!isLoaded" [class.ready]="isPlayerReady()">
+  
+  <!-- Botón principal de reproducción -->
+  <button 
+    class="audio-btn play-btn"
+    (click)="togglePlayback()"
+    [title]="getPlayTooltip()"
+    [class.playing]="isPlaying"
+    [class.loading]="!isLoaded"
+    [disabled]="!isLoaded"
+  >
+    <span class="btn-icon">{{ getPlayIcon() }}</span>
+  </button>
+
+  <!-- Controles de volumen -->
+  <div class="volume-controls" *ngIf="isLoaded">
+    
+    <!-- Botón de volumen -->
+    <button 
+      class="audio-btn volume-btn"
+      (click)="toggleVolumeSlider()"
+      [title]="isMuted ? 'Activar sonido' : 'Controlar volumen'"
+      [class.muted]="isMuted"
+    >
+      <span class="btn-icon">{{ getVolumeIcon() }}</span>
+    </button>
+
+    <!-- Slider de volumen (se muestra al hacer hover o clic) -->
+    <div 
+      class="volume-slider-container"
+      [class.show]="showVolumeSlider"
+    >
+      <input
+        type="range"
+        class="volume-slider"
+        min="0"
+        max="1"
+        step="0.1"
+        [value]="volume"
+        (input)="onVolumeChange($event)"
+        [disabled]="isMuted"
+      >
+      <div class="volume-percentage">{{ Math.round(volume * 100) }}%</div>
+    </div>
+
+  </div>
+
+  <!-- Botón de silencio rápido -->
+  <button 
+    class="audio-btn mute-btn"
+    (click)="toggleMute()"
+    [title]="isMuted ? 'Activar sonido' : 'Silenciar'"
+    [class.muted]="isMuted"
+    *ngIf="isLoaded"
+  >
+    <span class="btn-icon">{{ isMuted ? '🔇' : '🎵' }}</span>
+  </button>
+
+  <!-- Botón de autoplay -->
+  <button 
+    class="audio-btn autoplay-btn"
+    (click)="toggleAutoPlay()"
+    [title]="autoPlayEnabled ? 'Desactivar reproducción automática' : 'Activar reproducción automática'"
+    [class.enabled]="autoPlayEnabled"
+    *ngIf="isLoaded"
+  >
+    <span class="btn-icon">{{ autoPlayEnabled ? '🔄' : '⏸️' }}</span>
+  </button>
+
+  <!-- Indicador de estado -->
+  <div class="status-indicator" [class.playing]="isPlaying" *ngIf="isLoaded">
+    <div class="sound-wave">
+      <div class="wave-bar bar-1"></div>
+      <div class="wave-bar bar-2"></div>
+      <div class="wave-bar bar-3"></div>
+    </div>
+  </div>
+
+  <!-- Mensaje de estado -->
+  <div class="status-message" *ngIf="!hasUserInteracted && isLoaded">
+    <span class="status-text">🎵 {{ autoPlayEnabled ? 'Música se reproducirá automáticamente' : 'Clic para reproducir música' }}</span>
+  </div>
+
+</div>

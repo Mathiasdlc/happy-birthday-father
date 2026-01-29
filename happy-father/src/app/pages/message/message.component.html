@@ -1,0 +1,144 @@
+<div class="message-container">
+  
+  <!-- Header de navegación -->
+  <header class="page-header">
+    <div class="header-content">
+      <h1 class="page-title">💌 Mensaje del Corazón</h1>
+      <p class="page-subtitle">Las palabras que siempre he querido decirte</p>
+      
+      <!-- Navegación entre páginas -->
+      <nav class="page-nav">
+        <button class="nav-btn" (click)="navigateTo('/home')">🏠 Inicio</button>
+        <button class="nav-btn" (click)="navigateTo('/qualities')">⭐ Cualidades</button>
+        <button class="nav-btn" (click)="navigateTo('/gallery')">📸 Galería</button>
+        <button class="nav-btn" (click)="navigateTo('/memories')">💭 Recuerdos</button>
+        <button class="nav-btn active">💌 Mensaje</button>
+        <button class="nav-btn" (click)="navigateTo('/celebration')">🥂 Celebración</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="message-main">
+    
+    <!-- Carta principal -->
+    <section class="letter-section">
+      <div class="letter-container">
+        
+        <!-- Encabezado de la carta -->
+        <div class="letter-header">
+          <div class="letter-date">{{ birthdayDate }} de 2024</div>
+          <h2 class="letter-greeting">Querido Papá,</h2>
+        </div>
+
+        <!-- Contenido de la carta -->
+        <div class="letter-content">
+          
+          <!-- Párrafo 1: Introducción personal -->
+          <div class="letter-paragraph">
+            <p class="paragraph-text">
+              Hoy, en tu cumpleaños, quiero tomarme un momento para escribirte estas líneas que salen 
+              directamente de mi corazón. A mis {{ currentAge }} años, he llegado a una edad donde puedo 
+              apreciar verdaderamente todo lo que has hecho por mí durante estos años de mi vida.
+            </p>
+          </div>
+
+          <!-- Párrafo 2: Reconocimiento -->
+          <div class="letter-paragraph">
+            <p class="paragraph-text">
+              Durante todos estos años, has sido mucho más que un padre para mí. Has sido mi mentor, 
+              mi ejemplo a seguir, mi fuente de fortaleza y mi mayor apoyo. Cada decisión importante 
+              que he tomado ha llevado tu sabiduría como guía, cada logro que he alcanzado tiene tu 
+              huella de amor y dedicación.
+            </p>
+          </div>
+
+          <!-- Párrafo 3: Lecciones aprendidas -->
+          <div class="letter-paragraph">
+            <p class="paragraph-text">
+              Me has enseñado que la verdadera riqueza no se mide en lo material, sino en los valores 
+              que llevamos dentro. Tu integridad, tu honestidad, tu capacidad de trabajo y tu amor 
+              incondicional han sido las lecciones más valiosas que he recibido. Gracias por mostrarme 
+              con tu ejemplo lo que significa ser un hombre de bien.
+            </p>
+          </div>
+
+          <!-- Párrafo 4: Gratitud específica -->
+          <div class="letter-paragraph">
+            <p class="paragraph-text">
+              Gracias por cada madrugada que te levantaste para trabajar por nuestra familia, por cada 
+              noche que te quedaste despierto ayudándome con mis tareas, por cada vez que pusiste mis 
+              necesidades antes que las tuyas. Gracias por creer en mí incluso cuando yo mismo dudaba, 
+              y por darme la libertad de elegir mi propio camino sabiendo que siempre tendría tu apoyo.
+            </p>
+          </div>
+
+          <!-- Párrafo 5: Presente y futuro -->
+          <div class="letter-paragraph">
+            <p class="paragraph-text">
+              Hoy, mientras celebramos tu vida, quiero que sepas que mi mayor aspiración es llegar a ser 
+              la mitad del hombre que tú eres. Espero algún día poder darte los mismos motivos de orgullo 
+              que tú me has dado a mí. Quiero que veas crecer a tus nietos, que disfrutes de todos tus 
+              logros y que sepas que tu legado vivirá por generaciones.
+            </p>
+          </div>
+
+          <!-- Párrafo 6: Cierre emotivo -->
+          <div class="letter-paragraph">
+            <p class="paragraph-text">
+              En este día especial, no solo celebramos un año más de tu vida, sino todos los años que 
+              has dedicado a ser el mejor padre que un hijo podría pedir. Te amo más de lo que las 
+              palabras pueden expresar, y me siento infinitamente afortunado de ser tu hijo.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Firma de la carta -->
+        <div class="letter-signature">
+          <div class="signature-content">
+            <p class="signature-text">Con todo mi amor, admiración y respeto,</p>
+            <div class="signature-name">Tu hijo que te ama</div>
+            <div class="signature-detail">{{ currentAge }} años de gratitud infinita</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Sección de promesas -->
+    <section class="promises-section">
+      <div class="promises-card">
+        <h2 class="promises-title">🤝 Mis Promesas Para Ti</h2>
+        <div class="promises-list">
+          <div class="promise-item">
+            <div class="promise-icon">💪</div>
+            <div class="promise-text">Seguir creciendo y convirtiéndome en el hombre que me enseñaste a ser</div>
+          </div>
+          <div class="promise-item">
+            <div class="promise-icon">🎯</div>
+            <div class="promise-text">Perseguir mis sueños con la misma determinación que tú me has mostrado</div>
+          </div>
+          <div class="promise-item">
+            <div class="promise-icon">❤️</div>
+            <div class="promise-text">Cuidarte y estar ahí para ti como tú siempre has estado para mí</div>
+          </div>
+          <div class="promise-item">
+            <div class="promise-icon">🌟</div>
+            <div class="promise-text">Honrar tu legado y transmitir tus valores a las futuras generaciones</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navegación a siguiente página -->
+    <section class="navigation-section">
+      <button class="next-page-btn" (click)="navigateTo('/celebration')">
+        <span class="btn-text">Continuar a la Celebración Final</span>
+        <span class="btn-icon">🥂 →</span>
+      </button>
+    </section>
+
+  </main>
+
+</div>

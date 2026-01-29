@@ -1,0 +1,80 @@
+<div class="login-container">
+  <div class="login-card">
+    <!-- Header con título elegante -->
+    <div class="login-header">
+      <h1 class="login-title">🎉 Acceso Especial</h1>
+      <p class="login-subtitle">Una sorpresa te espera</p>
+    </div>
+
+    <!-- Formulario de login -->
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+      
+      <!-- Campo Usuario -->
+      <div class="form-group">
+        <label for="username" class="form-label">Usuario</label>
+        <input
+          type="text"
+          id="username"
+          formControlName="username"
+          class="form-input"
+          [class.error]="hasFieldError('username')"
+          placeholder="Ingresa tu usuario"
+          autocomplete="username"
+        >
+        <div class="error-message" *ngIf="hasFieldError('username')">
+          {{ getFieldError('username') }}
+        </div>
+      </div>
+
+      <!-- Campo Contraseña -->
+      <div class="form-group">
+        <label for="password" class="form-label">Contraseña</label>
+        <input
+          type="password"
+          id="password"
+          formControlName="password"
+          class="form-input"
+          [class.error]="hasFieldError('password')"
+          placeholder="Ingresa tu contraseña"
+          autocomplete="current-password"
+        >
+        <div class="error-message" *ngIf="hasFieldError('password')">
+          {{ getFieldError('password') }}
+        </div>
+      </div>
+
+      <!-- Mensaje de error general -->
+      <div class="general-error" *ngIf="errorMessage">
+        <i class="error-icon">⚠️</i>
+        {{ errorMessage }}
+      </div>
+
+      <!-- Botón de envío -->
+      <button
+        type="submit"
+        class="login-button"
+        [disabled]="isLoading"
+        [class.loading]="isLoading"
+      >
+        <span *ngIf="!isLoading">Ingresar</span>
+        <span *ngIf="isLoading" class="loading-text">
+          <i class="loading-spinner"></i>
+          Verificando...
+        </span>
+      </button>
+
+    </form>
+
+    <!-- Pista sutil -->
+    <div class="login-hint">
+      <p>💡 <em>Pista: piensa en alguien muy especial y su día especial</em></p>
+    </div>
+  </div>
+
+  <!-- Decoración de fondo -->
+  <div class="background-decoration">
+    <div class="decoration-circle circle-1"></div>
+    <div class="decoration-circle circle-2"></div>
+    <div class="decoration-circle circle-3"></div>
+  </div>
+</div>

@@ -1,0 +1,94 @@
+<div class="qualities-container">
+  
+  <!-- Header de navegación -->
+  <header class="page-header">
+    <div class="header-content">
+      <h1 class="page-title">⭐ Tus Cualidades Excepcionales</h1>
+      <p class="page-subtitle">Lo que más admiro y valoro de ti, papá</p>
+      
+      <!-- Navegación entre páginas -->
+      <nav class="page-nav">
+        <button class="nav-btn" (click)="navigateTo('/home')">🏠 Inicio</button>
+        <button class="nav-btn active">⭐ Cualidades</button>
+        <button class="nav-btn" (click)="navigateTo('/gallery')">📸 Galería</button>
+        <button class="nav-btn" (click)="navigateTo('/memories')">💭 Recuerdos</button>
+        <button class="nav-btn" (click)="navigateTo('/message')">💌 Mensaje</button>
+        <button class="nav-btn" (click)="navigateTo('/celebration')">🥂 Celebración</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="qualities-main">
+    
+    <!-- Introducción -->
+    <section class="intro-section">
+      <div class="intro-card">
+        <h2 class="intro-title">A mis {{ currentAge }} años, puedo reconocer...</h2>
+        <p class="intro-text">
+          Que tengo la fortuna de tener un padre excepcional. Estas son las cualidades que más admiro en ti 
+          y que espero algún día poder emular. Cada una de ellas ha moldeado quien soy hoy.
+        </p>
+      </div>
+    </section>
+
+    <!-- Grid de cualidades -->
+    <section class="qualities-grid">
+      <div 
+        *ngFor="let quality of qualities; trackBy: trackByQualityId"
+        class="quality-card"
+        [style.animation-delay]="quality.delay + 's'"
+        [style.border-color]="quality.color"
+        [class.selected]="selectedQuality?.id === quality.id"
+        (click)="selectQuality(quality)"
+      >
+        <div class="card-header">
+          <div class="quality-icon" [style.color]="quality.color">{{ quality.icon }}</div>
+          <div class="quality-info">
+            <h3 class="quality-title">{{ quality.title }}</h3>
+            <p class="quality-description">{{ quality.description }}</p>
+          </div>
+        </div>
+        
+        <!-- Mensaje detallado (se expande al hacer clic) -->
+        <div class="quality-details" [class.expanded]="selectedQuality?.id === quality.id">
+          <div class="details-content">
+            <p class="detailed-message">{{ quality.detailedMessage }}</p>
+          </div>
+        </div>
+        
+        <div class="card-footer">
+          <span class="expand-hint">
+            {{ selectedQuality?.id === quality.id ? 'Clic para contraer' : 'Clic para leer más' }}
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mensaje de reflexión -->
+    <section class="reflection-section">
+      <div class="reflection-card">
+        <h2 class="reflection-title">💭 Mi Reflexión</h2>
+        <p class="reflection-text">
+          Estas cualidades no son solo palabras bonitas, son realidades que he vivido contigo día a día. 
+          A los {{ currentAge }} años, entiendo que tener un padre como tú es un privilegio que no todos tienen. 
+          Gracias por ser mi ejemplo, mi guía y mi inspiración.
+        </p>
+        <div class="reflection-signature">
+          <span class="signature-text">Con admiración infinita</span>
+          <span class="signature-name">Tu hijo que te ama</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navegación a siguiente página -->
+    <section class="navigation-section">
+      <button class="next-page-btn" (click)="navigateTo('/gallery')">
+        <span class="btn-text">Continuar a la Galería</span>
+        <span class="btn-icon">📸 →</span>
+      </button>
+    </section>
+
+  </main>
+
+</div>

@@ -1,0 +1,119 @@
+<div class="memories-container">
+  
+  <!-- Header de navegación -->
+  <header class="page-header">
+    <div class="header-content">
+      <h1 class="page-title">💭 Nuestros Recuerdos</h1>
+      <p class="page-subtitle">Un viaje por los momentos que han definido nuestra relación</p>
+      
+      <!-- Navegación entre páginas -->
+      <nav class="page-nav">
+        <button class="nav-btn" (click)="navigateTo('/home')">🏠 Inicio</button>
+        <button class="nav-btn" (click)="navigateTo('/qualities')">⭐ Cualidades</button>
+        <button class="nav-btn" (click)="navigateTo('/gallery')">📸 Galería</button>
+        <button class="nav-btn active">💭 Recuerdos</button>
+        <button class="nav-btn" (click)="navigateTo('/message')">💌 Mensaje</button>
+        <button class="nav-btn" (click)="navigateTo('/celebration')">🥂 Celebración</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="memories-main">
+    
+    <!-- Introducción personal -->
+    <section class="intro-section">
+      <div class="intro-card">
+        <h2 class="intro-title">Mi Línea de Tiempo Contigo</h2>
+        <p class="intro-text">
+          A mis {{ currentAge }} años, estos son los recuerdos que más atesoro. Cada etapa de mi vida 
+          ha estado marcada por tu presencia, tu amor y tu guía. Desde mis primeros pasos hasta este momento, 
+          siempre has estado ahí.
+        </p>
+      </div>
+    </section>
+
+    <!-- Timeline de recuerdos -->
+    <section class="timeline-section">
+      <div class="timeline-container">
+        <div 
+          *ngFor="let memory of memories; trackBy: trackByMemoryId; let i = index"
+          class="timeline-item"
+          [class.left]="i % 2 === 0"
+          [class.right]="i % 2 === 1"
+          [class.selected]="selectedMemory?.id === memory.id"
+          (click)="selectMemory(memory)"
+        >
+          <!-- Punto en la línea de tiempo -->
+          <div class="timeline-dot" [style.background-color]="getCategoryColor(memory.category)">
+            <span class="timeline-icon">{{ memory.icon }}</span>
+          </div>
+          
+          <!-- Tarjeta de recuerdo -->
+          <div class="memory-card" [style.border-color]="getCategoryColor(memory.category)">
+            <div class="memory-header">
+              <div class="memory-year" [style.background-color]="getCategoryColor(memory.category)">
+                {{ memory.year }}
+              </div>
+              <div class="memory-emotion">{{ memory.emotion }}</div>
+            </div>
+            
+            <div class="memory-content">
+              <h3 class="memory-title">{{ memory.title }}</h3>
+              <p class="memory-description">{{ memory.description }}</p>
+            </div>
+            
+            <!-- Historia detallada (expandible) -->
+            <div class="memory-details" [class.expanded]="selectedMemory?.id === memory.id">
+              <div class="details-content">
+                <p class="detailed-story">{{ memory.detailedStory }}</p>
+              </div>
+            </div>
+            
+            <div class="memory-footer">
+              <span class="expand-hint">
+                {{ selectedMemory?.id === memory.id ? 'Clic para contraer' : 'Clic para leer la historia completa' }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reflexión sobre el tiempo -->
+    <section class="reflection-section">
+      <div class="reflection-card">
+        <h2 class="reflection-title">⏰ El Tiempo Que Hemos Compartido</h2>
+        <div class="time-stats">
+          <div class="stat-item">
+            <div class="stat-number">{{ currentAge }}</div>
+            <div class="stat-label">Años juntos</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">∞</div>
+            <div class="stat-label">Recuerdos creados</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Amor incondicional</div>
+          </div>
+        </div>
+        <p class="reflection-text">
+          Cada año que pasa, cada recuerdo que creamos, se convierte en un tesoro invaluable. 
+          Gracias por llenar mi vida de momentos significativos y por ser el protagonista 
+          de mis mejores recuerdos.
+        </p>
+      </div>
+    </section>
+
+    <!-- Navegación a siguiente página -->
+    <section class="navigation-section">
+      <button class="next-page-btn" (click)="navigateTo('/message')">
+        <span class="btn-text">Continuar al Mensaje Personal</span>
+        <span class="btn-icon">💌 →</span>
+      </button>
+    </section>
+
+  </main>
+
+</div>
